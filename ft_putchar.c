@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moboulan <moboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/01 18:45:51 by moboulan          #+#    #+#             */
-/*   Updated: 2024/11/09 20:18:37 by moboulan         ###   ########.fr       */
+/*   Created: 2024/11/02 14:52:20 by moboulan          #+#    #+#             */
+/*   Updated: 2024/12/04 14:35:59 by moboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "ft_printf.h"
 
-int	ft_putstr(char *s)
+int	ft_putchar(int c)
 {
-	int	size;
-
-	size = 0;
-	if (s == NULL)
-		s = "(null)";
-	while (*s)
-		size += ft_putchar(*s++);
-	return (size);
+	return (write(1, &c, 1));
 }
