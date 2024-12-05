@@ -6,7 +6,7 @@
 /*   By: moboulan <moboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 16:29:10 by moboulan          #+#    #+#             */
-/*   Updated: 2024/12/04 11:39:06 by moboulan         ###   ########.fr       */
+/*   Updated: 2024/12/05 20:50:34 by moboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,31 @@
 
 int static	handle_format(const char *s, va_list args)
 {
+	int	size;
+
+	size = 0;
 	if (*s == '%')
-		return (ft_putchar('%'));
+		size += ft_putchar('%');
 	else if (*s == 'c')
-		return (ft_putchar(va_arg(args, int)));
+		size += ft_putchar(va_arg(args, int));
 	else if (*s == 's')
-		return (ft_putstr(va_arg(args, char *)));
+		size += ft_putstr(va_arg(args, char *));
 	else if (*s == 'p')
-		return (ft_putstr("0x") + ft_putnbr_base(va_arg(args, unsigned long),
-				"0123456789abcdef"));
+	{
+		size += ft_putstr("0x");
+		size += ft_putnbr_base(va_arg(args, unsigned long), "0123456789abcdef");
+	}
 	else if (*s == 'd' || *s == 'i')
-		return (ft_putnbr(va_arg(args, int)));
+		size += ft_putnbr(va_arg(args, int));
 	else if (*s == 'u')
-		return (ft_putnbr(va_arg(args, unsigned int)));
+		size += ft_putnbr(va_arg(args, unsigned int));
 	else if (*s == 'x')
-		return (ft_putnbr_base(va_arg(args, unsigned int), "0123456789abcdef"));
+		size += ft_putnbr_base(va_arg(args, unsigned int), "0123456789abcdef");
 	else if (*s == 'X')
-		return (ft_putnbr_base(va_arg(args, unsigned int), "0123456789ABCDEF"));
+		size += ft_putnbr_base(va_arg(args, unsigned int), "0123456789ABCDEF");
 	else
-		return (ft_putchar(*s));
-	return (0);
+		size += ft_putchar(*s);
+	return (size);
 }
 
 int	ft_printf(const char *s, ...)
