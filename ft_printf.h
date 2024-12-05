@@ -6,7 +6,7 @@
 /*   By: moboulan <moboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 21:19:23 by moboulan          #+#    #+#             */
-/*   Updated: 2024/12/04 14:38:47 by moboulan         ###   ########.fr       */
+/*   Updated: 2024/12/05 21:00:35 by moboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <stdarg.h>
 # include <unistd.h>
 
-int	ft_strlen(char *str);
 int	ft_putchar(int c);
 int	ft_putstr(char *str);
 int	ft_putnbr(unsigned long nbr);
