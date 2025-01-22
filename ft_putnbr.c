@@ -6,18 +6,18 @@
 /*   By: moboulan <moboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 14:10:01 by moboulan          #+#    #+#             */
-/*   Updated: 2024/12/04 14:38:57 by moboulan         ###   ########.fr       */
+/*   Updated: 2025/01/22 11:49:30 by moboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnbr(unsigned long nbr)
+int	ft_putnbr(long nbr)
 {
 	int	size;
 
 	size = 0;
-	if ((long)nbr < 0)
+	if (nbr < 0)
 	{
 		size += ft_putchar('-');
 		nbr = -nbr;

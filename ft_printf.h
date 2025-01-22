@@ -6,7 +6,7 @@
 /*   By: moboulan <moboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 21:19:23 by moboulan          #+#    #+#             */
-/*   Updated: 2024/12/05 21:00:35 by moboulan         ###   ########.fr       */
+/*   Updated: 2025/01/22 11:52:22 by moboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 int	ft_putchar(int c);
 int	ft_putstr(char *str);
-int	ft_putnbr(unsigned long nbr);
+int	ft_putnbr(long nbr);
 int	ft_putnbr_base(unsigned long nbr, char *base);
 int	ft_printf(const char *format, ...);
 
